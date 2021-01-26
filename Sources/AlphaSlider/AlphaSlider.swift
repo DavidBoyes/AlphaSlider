@@ -40,11 +40,11 @@ import CoreImage
         let context = CIContext()
         let scale = UIScreen.main.scale
         let filter = CIFilter(name: "CICheckerboardGenerator", parameters: ["inputColor0" : CIColor.white, "inputColor1" : CIColor.gray, "inputCenter" : CIVector(x: 0, y: 0), "inputWidth" : 5*scale])
-        if let f = filter {
-            if let image = context.createCGImage(f.outputImage!, from: CGRect(x: bounds.minX * scale, y: bounds.minY * scale, width: (bounds.width) * scale, height: bounds.height * scale)) {
-                background = UIImage(cgImage: image, scale: scale, orientation: .up)
-            }
-        }
+        
+        guard let outputImage = filter?.outputImage else { return }
+        guard let image = context.createCGImage(outputImage, from: CGRect(x: bounds.minX * scale, y: bounds.minY * scale, width: (bounds.width) * scale, height: bounds.height * scale)) else { return }
+        
+        background = UIImage(cgImage: image, scale: scale, orientation: .up)
         setNeedsDisplay()
     }
     

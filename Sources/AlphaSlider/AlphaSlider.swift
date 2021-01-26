@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import UIKit
 import CoreImage
 
@@ -85,3 +86,4 @@ import CoreImage
         
     }
 }
+#endif

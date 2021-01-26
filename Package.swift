@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "AlphaSlider",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         .library(
             name: "AlphaSlider",
@@ -15,6 +18,7 @@ let package = Package(
     targets: [
         .target(
             name: "AlphaSlider",
-            dependencies: []),
+            dependencies: [],
+            exclude: ["Images"]),
     ]
 )

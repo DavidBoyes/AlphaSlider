@@ -1,5 +1,5 @@
 # AlphaSlider
-![](https://github.com/DavidBoyes/AlphaSlider/blob/master/Images/example.png?raw=true)
+![](https://github.com/DavidBoyes/AlphaSlider/blob/master/Screenshots/example.png?raw=true)
 
 A visual improvement of UISlider to be used to specify the alpha value of a color.
 
